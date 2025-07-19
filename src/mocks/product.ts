@@ -1,0 +1,286 @@
+import { type Product } from '@/types/Product';
+import { productCategories } from './category';
+import { productBrands } from './data/brand';
+
+export const productData: Product[] = [
+  {
+    id: '1',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product1.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    ),
+    brand: productBrands.find((brand) => brand.id === 'asakashi'),
+    year: '2021',
+    origin: 'Nhật Bản',
+  },
+  {
+    id: '2',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product2.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'bosch'),
+    year: '2020',
+    origin: 'Đức',
+  },
+  {
+    id: '3',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product3.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'huyndai'),
+    year: '2019',
+    origin: 'Trung Quốc',
+  },
+  {
+    id: '4',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product4.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-nhien-lieu'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'asakashi'),
+    year: '2021',
+    origin: 'Nhật Bản',
+  },
+  {
+    id: '5',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product5.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'bosch')!,
+    year: '2020',
+    origin: 'Đức',
+  },
+  {
+    id: '6',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product4.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'huyndai')!,
+    year: '2019',
+    origin: 'Trung Quốc',
+  },
+  {
+    id: '7',
+    name: 'Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)',
+    price: 299000,
+    originalPrice: 329000,
+    discount: '-10%',
+    image: '/images/products/product5.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-nhien-lieu'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'asakashi')!,
+    year: '2021',
+    origin: 'Nhật Bản',
+  },
+  {
+    id: '8',
+    name: 'Lọc dầu động cơ Oil Filter - Toyota Camry (90915-YZZD2)',
+    price: 150000,
+    originalPrice: 180000,
+    discount: '-17%',
+    image: '/images/products/product1.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'denso'),
+    year: '2022',
+    origin: 'Thái Lan',
+  },
+  {
+    id: '9',
+    name: 'Lọc gió điều hòa Cabin Air Filter - Honda Civic (80292-TR0-A01)',
+    price: 220000,
+    originalPrice: 250000,
+    discount: '-12%',
+    image: '/images/products/product2.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'mann-filter'),
+    year: '2023',
+    origin: 'Đức',
+  },
+  {
+    id: '10',
+    name: 'Lọc nhiên liệu Fuel Filter - Ford Ranger (AB39-9176-AC)',
+    price: 350000,
+    originalPrice: 400000,
+    discount: '-12%',
+    image: '/images/products/product3.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-nhien-lieu'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'bosch')!,
+    year: '2021',
+    origin: 'Trung Quốc',
+  },
+  {
+    id: '11',
+    name: 'Lọc gió động cơ Air Filter - Mazda 3 (PE07-13-3A0A)',
+    price: 280000,
+    originalPrice: 310000,
+    discount: '-10%',
+    image: '/images/products/product4.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'sakura'),
+    year: '2022',
+    origin: 'Indonesia',
+  },
+  {
+    id: '12',
+    name: 'Lọc dầu hộp số Automatic Transmission Filter - Hyundai Elantra (46321-23001)',
+    price: 450000,
+    originalPrice: 500000,
+    discount: '-10%',
+    image: '/images/products/product5.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'mobis'),
+    year: '2020',
+    origin: 'Hàn Quốc',
+  },
+  {
+    id: '13',
+    name: 'Lọc gió động cơ Air Filter - Kia Cerato (28113-F2000)',
+    price: 270000,
+    originalPrice: 300000,
+    discount: '-10%',
+    image: '/images/products/product1.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'mobis')!,
+    year: '2023',
+    origin: 'Hàn Quốc',
+  },
+  {
+    id: '14',
+    name: 'Lọc dầu động cơ Oil Filter - Honda CRV (15400-RTA-003)',
+    price: 160000,
+    originalPrice: 190000,
+    discount: '-16%',
+    image: '/images/products/product2.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'honda-genuine'),
+    year: '2022',
+    origin: 'Nhật Bản',
+  },
+  {
+    id: '15',
+    name: 'Lọc nhiên liệu Fuel Filter - Toyota Innova (23300-0L041)',
+    price: 320000,
+    originalPrice: 350000,
+    discount: '-9%',
+    image: '/images/products/product3.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-nhien-lieu'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'denso')!,
+    year: '2021',
+    origin: 'Thái Lan',
+  },
+  {
+    id: '16',
+    name: 'Lọc gió điều hòa Cabin Air Filter - Toyota Vios (87139-0N010)',
+    price: 200000,
+    originalPrice: 230000,
+    discount: '-13%',
+    image: '/images/products/product4.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'denso')!,
+    year: '2023',
+    origin: 'Thái Lan',
+  },
+  {
+    id: '17',
+    name: 'Lọc dầu động cơ Oil Filter - Mercedes-Benz C200 (A2711800109)',
+    price: 600000,
+    originalPrice: 650000,
+    discount: '-8%',
+    image: '/images/products/product5.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-dau'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'mann-filter')!,
+    year: '2020',
+    origin: 'Đức',
+  },
+  {
+    id: '18',
+    name: 'Lọc gió động cơ Air Filter - BMW 3 Series (13717532754)',
+    price: 700000,
+    originalPrice: 750000,
+    discount: '-7%',
+    image: '/images/products/product1.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'bosch')!,
+    year: '2019',
+    origin: 'Đức',
+  },
+  {
+    id: '19',
+    name: 'Lọc nhiên liệu Fuel Filter - Mercedes-Benz E250 (A6510901652)',
+    price: 800000,
+    originalPrice: 850000,
+    discount: '-6%',
+    image: '/images/products/product2.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-nhien-lieu'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'mahle'),
+    year: '2020',
+    origin: 'Áo',
+  },
+  {
+    id: '20',
+    name: 'Lọc gió điều hòa Cabin Air Filter - Audi A4 (8K0819439B)',
+    price: 550000,
+    originalPrice: 600000,
+    discount: '-8%',
+    image: '/images/products/product3.png',
+    category: productCategories.find(
+      (category) => category.id === 'bo-loc-khong-khi'
+    )!,
+    brand: productBrands.find((brand) => brand.id === 'ufi'),
+    year: '2021',
+    origin: 'Ý',
+  },
+];
