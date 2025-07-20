@@ -163,7 +163,11 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <Button onClick={onResetFilters}>Clear Filter</Button>
+      <div className="p-4 border-t border-gray-100">
+        <Button onClick={onResetFilters} className="w-full !bg-blue-500 text-white hover:bg-blue-600">
+          Clear Filter
+        </Button>
+      </div>
     </div>
   );
 };
