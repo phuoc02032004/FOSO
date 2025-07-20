@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import ProductFilter from "../Product/ProductFilter";
 import ProductList from "../Product/ProductList";
@@ -14,30 +14,149 @@ import { ChevronDown, Check } from "lucide-react";
 import { features } from "@/mocks/features";
 
 const ProductSection: React.FC = () => {
-  const [products, setProducts] = useState(productData);
+  const [filteredProducts, setFilteredProducts] = useState(productData);
   const [sortBy, setSortBy] = useState("Liên quan");
+
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState<string | null>(
+    null
+  );
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedYears, setSelectedYears] = useState<string[]>([]);
+  const [selectedOrigins, setSelectedOrigins] = useState<string[]>([]);
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(categoryId)
+        ? prev.filter((id) => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
+
+  const handlePriceRangeChange = (range: string) => {
+    setSelectedPriceRange((prev) => (range === prev ? null : range));
+  };
+
+  const handleBrandChange = (brand: string) => {
+    setSelectedBrands((prev) =>
+      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
+    );
+  };
+
+  const handleYearChange = (year: string) => {
+    setSelectedYears((prev) =>
+      prev.includes(year) ? prev.filter((y) => y !== year) : [...prev, year]
+    );
+  };
+
+  const handleOriginChange = (origin: string) => {
+    setSelectedOrigins((prev) =>
+      prev.includes(origin) ? prev.filter((o) => o !== origin) : [...prev, origin]
+    );
+  };
+
+  const handleResetFilters = () => {
+    setSelectedCategories([]);
+    setSelectedPriceRange(null);
+    setSelectedBrands([]);
+    setSelectedYears([]);
+    setSelectedOrigins([]);
+  };
+
+  useEffect(() => {
+    let filtered = productData.filter((product) => {
+      // Nếu có category được chọn và sản phẩm không thuộc category nào được chọn
+      if (selectedCategories.length > 0) {
+        if (!product.categoryId || !selectedCategories.includes(product.categoryId)) {
+          return false;
+        }
+      }
+      if (
+        selectedBrands.length > 0 &&
+        product.brand &&
+        !selectedBrands.includes(product.brand.id)
+      ) {
+        return false;
+      }
+      if (
+        selectedYears.length > 0 &&
+        product.year &&
+        !selectedYears.includes(product.year)
+      ) {
+        return false;
+      }
+      if (
+        selectedOrigins.length > 0 &&
+        product.origin &&
+        !selectedOrigins.includes(product.origin)
+      ) {
+        return false;
+      }
+      if (selectedPriceRange) {
+        const price = product.price;
+        switch (selectedPriceRange) {
+          case "Dưới 100,000 đ":
+            if (price >= 100000) return false;
+            break;
+          case "100,000 đ - 300,000 đ":
+            if (price < 100000 || price >= 300000) return false;
+            break;
+          case "300,000 đ - 500,000 đ":
+            if (price < 300000 || price >= 500000) return false;
+            break;
+          case "500,000 đ - 700,000 đ":
+            if (price < 500000 || price >= 700000) return false;
+            break;
+          case "Trên 700,000 đ":
+            if (price < 700000) return false;
+            break;
+        }
+      }
+      return true;
+    });
+
+    let sortedProducts = [...filtered];
+    if (sortBy === "Giá: Thấp → Cao") {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "Giá: Cao → Thấp") {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    }
+    setFilteredProducts(sortedProducts);
+  }, [
+    selectedCategories,
+    selectedPriceRange,
+    selectedBrands,
+    selectedYears,
+    selectedOrigins,
+    sortBy,
+  ]);
 
   const handleSortChange = (sortOption: string) => {
     setSortBy(sortOption);
-    let sortedProducts = [...products];
-    if (sortOption === "Giá: Thấp → Cao") {
-      sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (sortOption === "Giá: Cao → Thấp") {
-      sortedProducts.sort((a, b) => b.price - a.price);
-    }
-    setProducts(sortedProducts);
   };
 
   return (
     <section className="w-full py-8">
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-1/4">
-          <ProductFilter />
+          <ProductFilter
+            selectedCategories={selectedCategories}
+            selectedPriceRange={selectedPriceRange}
+            selectedBrands={selectedBrands}
+            selectedYears={selectedYears}
+            selectedOrigins={selectedOrigins}
+            onCategoryChange={handleCategoryChange}
+            onPriceRangeChange={handlePriceRangeChange}
+            onBrandChange={handleBrandChange}
+            onYearChange={handleYearChange}
+            onOriginChange={handleOriginChange}
+            onResetFilters={handleResetFilters}
+          />
         </div>
         <div className="w-full lg:w-3/4">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-semibold text-gray-800">
-              Danh sách sản phẩm
+              Danh sách sản phẩm ({filteredProducts.length})
             </h2>
             <div className="flex items-center gap-4">
               <span className="text-gray-600">Sắp xếp theo</span>
@@ -110,7 +229,7 @@ const ProductSection: React.FC = () => {
               </div>
             </div>
           </div>
-          <ProductList products={products} />
+          <ProductList products={filteredProducts} />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-stretch items-stretch gap-8 py-10 px-0 w-full">

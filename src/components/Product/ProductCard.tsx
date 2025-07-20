@@ -26,7 +26,9 @@ const ProductCard : React.FC<ProductCardProps> = ({ product }) => {
             <div>
               <p className='text-[20px] font-normal text-[#B71D18]'>{formatVND(product.price)}</p>
               <div className='flex items-center gap-2'>
-                <p className='text-sm text-gray-500 line-through'>{formatVND(product.originalPrice)}</p>
+                {product.originalPrice && (
+                  <p className='text-sm text-gray-500 line-through'>{formatVND(product.originalPrice)}</p>
+                )}
                 <p className='text-xs font-bold text-[#B71D18] bg-[rgba(0,184,217,0.08)] px-1 rounded-md'>{product.discount}</p>
               </div>
             </div>

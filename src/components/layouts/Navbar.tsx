@@ -245,12 +245,14 @@ const Navbar: React.FC = () => {
                                               đ
                                             </p>
                                             <div className="text-xs text-gray-500 mt-0.5">
-                                              <span className="line-through">
-                                                {product.originalPrice.toLocaleString(
-                                                  "vi-VN"
-                                                )}{" "}
-                                                đ
-                                              </span>
+                                              {product.originalPrice && (
+                                                <span className="line-through">
+                                                  {product.originalPrice.toLocaleString(
+                                                    "vi-VN"
+                                                  )}{" "}
+                                                  đ
+                                                </span>
+                                              )}
                                               <span className="text-red-600 font-semibold ml-2">
                                                 {product.discount}
                                               </span>

@@ -1,15 +1,24 @@
-import type { Category } from "./Category";
-import type { Brand } from "./brand";
+import type { Category } from './Category';
+import type { Brand } from './brand';
 
-export type Product = {
-  id?: string,
+export interface Product {
+  id: string;
   name: string;
-  image: string;
   price: number;
-  originalPrice: number,
-  discount:string
-  category?: Category,
-  brand?: Brand,
-  year?: string,
-  origin?: string
+  originalPrice?: number;
+  discount?: string;
+  image: string;
+  images?: string[];
+  description?: string;
+  rating?: number;
+  reviews?: number;
+  isNew?: boolean;
+  isHot?: boolean;
+  sold?: number;
+  stock?: number;
+  categoryId?: string; 
+  category?: Category; 
+  brand?: Brand;
+  year?: string;
+  origin?: string;
 }

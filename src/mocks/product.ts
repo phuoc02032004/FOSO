@@ -1,5 +1,4 @@
 import { type Product } from '@/types/Product';
-import { productCategories } from './category';
 import { productBrands } from './data/brand';
 
 export const productData: Product[] = [
@@ -10,9 +9,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product1.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    ),
+    categoryId: '1',
     brand: productBrands.find((brand) => brand.id === 'asakashi'),
     year: '2021',
     origin: 'Nhật Bản',
@@ -24,9 +21,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product2.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '2',
     brand: productBrands.find((brand) => brand.id === 'bosch'),
     year: '2020',
     origin: 'Đức',
@@ -38,9 +33,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product3.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '3',
     brand: productBrands.find((brand) => brand.id === 'huyndai'),
     year: '2019',
     origin: 'Trung Quốc',
@@ -52,9 +45,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product4.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-nhien-lieu'
-    )!,
+    categoryId: '4',
     brand: productBrands.find((brand) => brand.id === 'asakashi'),
     year: '2021',
     origin: 'Nhật Bản',
@@ -66,9 +57,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product5.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '5',
     brand: productBrands.find((brand) => brand.id === 'bosch')!,
     year: '2020',
     origin: 'Đức',
@@ -80,9 +69,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product4.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '6',
     brand: productBrands.find((brand) => brand.id === 'huyndai')!,
     year: '2019',
     origin: 'Trung Quốc',
@@ -94,9 +81,7 @@ export const productData: Product[] = [
     originalPrice: 329000,
     discount: '-10%',
     image: '/images/products/product5.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-nhien-lieu'
-    )!,
+    categoryId: '7',
     brand: productBrands.find((brand) => brand.id === 'asakashi')!,
     year: '2021',
     origin: 'Nhật Bản',
@@ -108,9 +93,7 @@ export const productData: Product[] = [
     originalPrice: 180000,
     discount: '-17%',
     image: '/images/products/product1.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '8',
     brand: productBrands.find((brand) => brand.id === 'denso'),
     year: '2022',
     origin: 'Thái Lan',
@@ -122,9 +105,7 @@ export const productData: Product[] = [
     originalPrice: 250000,
     discount: '-12%',
     image: '/images/products/product2.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '1',
     brand: productBrands.find((brand) => brand.id === 'mann-filter'),
     year: '2023',
     origin: 'Đức',
@@ -136,9 +117,7 @@ export const productData: Product[] = [
     originalPrice: 400000,
     discount: '-12%',
     image: '/images/products/product3.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-nhien-lieu'
-    )!,
+    categoryId: '2',
     brand: productBrands.find((brand) => brand.id === 'bosch')!,
     year: '2021',
     origin: 'Trung Quốc',
@@ -150,9 +129,7 @@ export const productData: Product[] = [
     originalPrice: 310000,
     discount: '-10%',
     image: '/images/products/product4.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '3',
     brand: productBrands.find((brand) => brand.id === 'sakura'),
     year: '2022',
     origin: 'Indonesia',
@@ -164,9 +141,7 @@ export const productData: Product[] = [
     originalPrice: 500000,
     discount: '-10%',
     image: '/images/products/product5.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '4',
     brand: productBrands.find((brand) => brand.id === 'mobis'),
     year: '2020',
     origin: 'Hàn Quốc',
@@ -178,9 +153,7 @@ export const productData: Product[] = [
     originalPrice: 300000,
     discount: '-10%',
     image: '/images/products/product1.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '5',
     brand: productBrands.find((brand) => brand.id === 'mobis')!,
     year: '2023',
     origin: 'Hàn Quốc',
@@ -192,9 +165,7 @@ export const productData: Product[] = [
     originalPrice: 190000,
     discount: '-16%',
     image: '/images/products/product2.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '6',
     brand: productBrands.find((brand) => brand.id === 'honda-genuine'),
     year: '2022',
     origin: 'Nhật Bản',
@@ -206,9 +177,7 @@ export const productData: Product[] = [
     originalPrice: 350000,
     discount: '-9%',
     image: '/images/products/product3.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-nhien-lieu'
-    )!,
+    categoryId: '7',
     brand: productBrands.find((brand) => brand.id === 'denso')!,
     year: '2021',
     origin: 'Thái Lan',
@@ -220,9 +189,7 @@ export const productData: Product[] = [
     originalPrice: 230000,
     discount: '-13%',
     image: '/images/products/product4.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '8',
     brand: productBrands.find((brand) => brand.id === 'denso')!,
     year: '2023',
     origin: 'Thái Lan',
@@ -234,9 +201,7 @@ export const productData: Product[] = [
     originalPrice: 650000,
     discount: '-8%',
     image: '/images/products/product5.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-dau'
-    )!,
+    categoryId: '1',
     brand: productBrands.find((brand) => brand.id === 'mann-filter')!,
     year: '2020',
     origin: 'Đức',
@@ -248,9 +213,7 @@ export const productData: Product[] = [
     originalPrice: 750000,
     discount: '-7%',
     image: '/images/products/product1.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '2',
     brand: productBrands.find((brand) => brand.id === 'bosch')!,
     year: '2019',
     origin: 'Đức',
@@ -262,9 +225,7 @@ export const productData: Product[] = [
     originalPrice: 850000,
     discount: '-6%',
     image: '/images/products/product2.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-nhien-lieu'
-    )!,
+    categoryId: '3',
     brand: productBrands.find((brand) => brand.id === 'mahle'),
     year: '2020',
     origin: 'Áo',
@@ -276,9 +237,7 @@ export const productData: Product[] = [
     originalPrice: 600000,
     discount: '-8%',
     image: '/images/products/product3.png',
-    category: productCategories.find(
-      (category) => category.id === 'bo-loc-khong-khi'
-    )!,
+    categoryId: '4',
     brand: productBrands.find((brand) => brand.id === 'ufi'),
     year: '2021',
     origin: 'Ý',
